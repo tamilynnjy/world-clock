@@ -22,6 +22,16 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  let fijiElement = document.querySelector("#fiji");
+  if (fijiElement) {
+    let fijiDateElement = fijiElement.querySelector(".date");
+    let fijiTimeElement = fijiElement.querySelector(".time");
+    let fijiTime = moment().tz("Pacific/Fiji");
+
+    fijiDateElement.innerHTML = fijiTime.format("MMMM Do YYYY");
+    fijiTimeElement.innerHTML = fijiTime.format("h:mm:ss [<small>]A[</small>]");
+  }
 }
 
 function updateCity(event) {
